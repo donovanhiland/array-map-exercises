@@ -1,6 +1,12 @@
-import { wrapWithHtml } from "../exercises/7-wrapWithHtml"
+import { wrapWithHtml } from "../../exercises/map/7-wrapWithHtml"
 import { faker } from "@faker-js/faker"
-import { people, generateRandomPeople } from "./helpers"
+import { people, generateRandomPeople } from "../helpers"
+
+const testSolution = (arr) =>
+  arr.map(
+    (person) =>
+      `<h1>${person.firstName} ${person.lastName}</h1><h2>${person.age}</h2>`
+  )
 
 describe("wrapWithHtml", () => {
   it("creates an array of names empty array", () => {
@@ -20,12 +26,7 @@ describe("wrapWithHtml", () => {
   it("creates array of names random test", () => {
     const randomTest = () => {
       const arr = generateRandomPeople()
-      expect(wrapWithHtml(arr)).toMatchObject(
-        arr.map(
-          (person) =>
-            `<h1>${person.firstName} ${person.lastName}</h1><h2>${person.age}</h2>`
-        )
-      )
+      expect(wrapWithHtml(arr)).toMatchObject(testSolution(arr))
     }
 
     randomTest()

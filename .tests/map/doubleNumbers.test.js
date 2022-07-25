@@ -1,5 +1,7 @@
-import { doubleNumbers } from "../exercises/1-doubleNumbers"
+import { doubleNumbers } from "../../exercises/map/1-doubleNumbers"
 import { faker } from "@faker-js/faker"
+
+const testSolution = (arr) => arr.map((num) => num * 2)
 
 describe("doubleNumbers", () => {
   it("doubles empty array", () => {
@@ -19,8 +21,7 @@ describe("doubleNumbers", () => {
       const arr = Array.from(
         Array(faker.datatype.number({ min: 0, max: 999 }))
       ).map(() => faker.random.numeric())
-      const doubledNumbers = arr.map((num) => num * 2)
-      expect(doubleNumbers(arr)).toMatchObject(doubledNumbers)
+      expect(doubleNumbers(arr)).toMatchObject(testSolution(arr))
     }
 
     randomTest()

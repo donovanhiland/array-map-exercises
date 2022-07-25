@@ -1,5 +1,7 @@
-import { stringItUp } from "../exercises/2-stringItUp"
+import { stringItUp } from "../../exercises/map/2-stringItUp"
 import { faker } from "@faker-js/faker"
+
+const testSolution = (arr) => arr.map((n) => String(n)
 
 describe("stringItUp", () => {
   it("♾", () => {
@@ -20,7 +22,7 @@ describe("stringItUp", () => {
         Array(faker.datatype.number({ min: 0, max: 999 }))
       ).map(() => faker.datatype.number())
 
-      expect(stringItUp(arr)).toMatchObject(arr.map((n) => String(n)))
+      expect(stringItUp(arr)).toMatchObject(testSolution(arr))
     }
 
     randomTest()

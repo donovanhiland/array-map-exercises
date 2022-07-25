@@ -1,5 +1,8 @@
-import { reverseCapitalizeNames } from "../exercises/4-reverseCapitalizeNames"
+import { reverseCapitalizeNames } from "../../exercises/map/4-reverseCapitalizeNames"
 import { faker } from "@faker-js/faker"
+
+const testSolution = (arr) =>
+  arr.map((name) => name[0].toLowerCase() + name.slice(1).toUpperCase())
 
 describe("reverseCapitalizeNames", () => {
   it("reverse capitalizes empty array", () => {
@@ -41,9 +44,7 @@ describe("reverseCapitalizeNames", () => {
       const arr = Array.from(
         Array(faker.datatype.number({ min: 0, max: 999 }))
       ).map(() => faker.name.firstName())
-      expect(reverseCapitalizeNames(arr)).toMatchObject(
-        arr.map((name) => name[0].toLowerCase() + name.slice(1).toUpperCase())
-      )
+      expect(reverseCapitalizeNames(arr)).toMatchObject(testSolution(arr))
     }
 
     randomTest()

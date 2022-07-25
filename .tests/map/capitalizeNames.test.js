@@ -1,5 +1,8 @@
-import { capitalizeNames } from "../exercises/3-capitalizeNames"
+import { capitalizeNames } from "../../exercises/map/3-capitalizeNames"
 import { faker } from "@faker-js/faker"
+
+const testSolution = (arr) =>
+  arr.map((name) => name[0].toUpperCase() + name.slice(1).toLowerCase())
 
 describe("capitalizeNames", () => {
   it("capitalizes empty array", () => {
@@ -41,9 +44,7 @@ describe("capitalizeNames", () => {
       const arr = Array.from(
         Array(faker.datatype.number({ min: 0, max: 999 }))
       ).map(() => faker.name.firstName())
-      expect(capitalizeNames(arr)).toMatchObject(
-        arr.map((name) => name[0].toUpperCase() + name.slice(1).toLowerCase())
-      )
+      expect(capitalizeNames(arr)).toMatchObject(testSolution(arr))
     }
 
     randomTest()
