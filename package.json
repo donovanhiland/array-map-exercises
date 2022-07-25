@@ -1,0 +1,19 @@
+{
+  "name": "array-methods-exercises",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "jest --watch",
+    "debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@ravnhq/prettier-config": "^1.0.0",
+    "@swc/core": "^1.2.218",
+    "@swc/jest": "^0.2.22",
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3"
+  },
+  "dependencies": {}
+}
