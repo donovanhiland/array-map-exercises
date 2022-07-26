@@ -19,7 +19,7 @@ describe("stringItUp", () => {
   it("random test", () => {
     const randomTest = () => {
       const arr = Array.from(
-        Array(faker.datatype.number({ min: 0, max: 999 }))
+        Array(faker.datatype.number({ min: 0, max: 99 }))
       ).map(() => faker.datatype.number())
 
       expect(stringItUp(arr)).toMatchObject(testSolution(arr))
