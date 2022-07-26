@@ -1,7 +1,7 @@
 import { stringItUp } from "../../exercises/map/2-stringItUp"
 import { faker } from "@faker-js/faker"
 
-const testSolution = (arr) => arr.map((n) => String(n)
+const testSolution = (arr) => arr.map((n) => String(n))
 
 describe("stringItUp", () => {
   it("♾", () => {
