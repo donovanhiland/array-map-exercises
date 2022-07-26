@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "jest --watch",
+    "start": "jest --watchAll",
     "debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
   },
   "devDependencies": {
